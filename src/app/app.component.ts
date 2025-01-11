@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TeamComponent } from './team/team.component';
+import { AboutComponent } from './about/about.component';
+import { ProjectComponent } from './project/project.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [TeamComponent, AboutComponent, ProjectComponent, NavbarComponent],
 })
 export class AppComponent {
-  title = 'web-app';
+  projects = [
+    { imgSrc: 'assets/image1.jpg', imgAlt: 'Image 1' },
+    { imgSrc: 'assets/image2.jpg', imgAlt: 'Image 2' },
+    { imgSrc: 'assets/image3.jpg', imgAlt: 'Image 3' },
+    { imgSrc: 'assets/image4.jpg', imgAlt: 'Image 4' },
+  ];
 }

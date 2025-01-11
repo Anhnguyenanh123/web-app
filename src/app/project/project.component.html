@@ -1,0 +1,28 @@
+<section id="projects" class="text-center py-5">
+  <div *ngIf="projects.length > 0; else noProjects">
+    <div class="slider-container">
+      <div
+        class="slider-item"
+        *ngFor="let project of projects; let i = index"
+        [ngClass]="{
+          selected: i === selectedIndex,
+          prev: i === selectedIndex - 1,
+          next: i === selectedIndex + 1,
+          hideLeft: i < selectedIndex - 1,
+          hideRight: i > selectedIndex + 1
+        }"
+      >
+        <img
+          [src]="project.imgSrc"
+          [alt]="project.imgAlt"
+          class="slider-img"
+          (panright)="showPrev(i)"
+          (panleft)="showNext(i)"
+        />
+      </div>
+    </div>
+  </div>
+  <ng-template #noProjects>
+    <p>No projects available</p>
+  </ng-template>
+</section>
