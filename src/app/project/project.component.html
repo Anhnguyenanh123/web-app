@@ -1,11 +1,13 @@
-<ngb-carousel>
-  <ng-template ngbSlide *ngFor="let project of projects">
-    <a [href]="project.weblink" target="_blank">
-      <img
-        [src]="project.imgSrc"
-        [alt]="project.imgAlt"
-        class="d-block w-100"
-      />
-    </a>
-  </ng-template>
-</ngb-carousel>
+<section id="projects">
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let project of projects">
+      <a [href]="project.weblink" target="_blank">
+        <img
+          [src]="project.imgSrc"
+          [alt]="project.imgAlt"
+          class="d-block w-100"
+        />
+      </a>
+    </ng-template>
+  </ngb-carousel>
+</section>
